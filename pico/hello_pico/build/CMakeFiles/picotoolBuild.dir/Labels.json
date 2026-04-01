@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/picotoolBuild"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/picotoolBuild.rule"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/picotoolBuild-complete.rule"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/picotool/src/picotoolBuild-stamp/picotoolBuild-build.rule"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/picotool/src/picotoolBuild-stamp/picotoolBuild-configure.rule"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/picotool/src/picotoolBuild-stamp/picotoolBuild-download.rule"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/picotool/src/picotoolBuild-stamp/picotoolBuild-install.rule"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/picotool/src/picotoolBuild-stamp/picotoolBuild-mkdir.rule"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/picotool/src/picotoolBuild-stamp/picotoolBuild-patch.rule"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/picotool/src/picotoolBuild-stamp/picotoolBuild-test.rule"
+		},
+		{
+			"file" : "/home/pi/access_control_system/pico/hello_pico/build/picotool/src/picotoolBuild-stamp/picotoolBuild-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"picotoolBuild"
+		],
+		"name" : "picotoolBuild"
+	}
+}
