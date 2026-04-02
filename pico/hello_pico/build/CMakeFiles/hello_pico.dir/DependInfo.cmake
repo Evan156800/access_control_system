@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_ASM
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S" "/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S" "/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o"
   )
+set(CMAKE_ASM_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_ASM
@@ -86,6 +87,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
+  "."
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_atomic/include"
   "/home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src"
   "/home/pi/access_control_system/pico/pico-sdk/src/common/pico_stdlib_headers/include"
@@ -145,6 +147,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_mem_ops/include"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2040/boot_stage2/include"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include"
+  "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/include"
   )
 
 # The set of dependency files which are needed:
@@ -183,6 +186,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o.d"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o.d"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o.d"
+  "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.o.d"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o.d"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o.d"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o.d"
@@ -219,6 +223,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o.d"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o.d"
   "/home/pi/access_control_system/pico/hello_pico/main.c" "CMakeFiles/hello_pico.dir/main.c.o" "gcc" "CMakeFiles/hello_pico.dir/main.c.o.d"
+  "/home/pi/access_control_system/pico/hello_pico/ws2812.c" "CMakeFiles/hello_pico.dir/ws2812.c.o" "gcc" "CMakeFiles/hello_pico.dir/ws2812.c.o.d"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o.d"
   )
 

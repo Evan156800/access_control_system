@@ -130,6 +130,45 @@ hello_pico/fast:
 .PHONY : hello_pico/fast
 
 #=============================================================================
+# Target rules for targets named hello_pico_ws2812_pio_h
+
+# Build rule for target.
+hello_pico_ws2812_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_pico_ws2812_pio_h
+.PHONY : hello_pico_ws2812_pio_h
+
+# fast build rule for target.
+hello_pico_ws2812_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico_ws2812_pio_h.dir/build.make CMakeFiles/hello_pico_ws2812_pio_h.dir/build
+.PHONY : hello_pico_ws2812_pio_h/fast
+
+#=============================================================================
+# Target rules for targets named picotoolForceReconfigure
+
+# Build rule for target.
+picotoolForceReconfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 picotoolForceReconfigure
+.PHONY : picotoolForceReconfigure
+
+# fast build rule for target.
+picotoolForceReconfigure/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picotoolForceReconfigure.dir/build.make CMakeFiles/picotoolForceReconfigure.dir/build
+.PHONY : picotoolForceReconfigure/fast
+
+#=============================================================================
+# Target rules for targets named picotoolBuild
+
+# Build rule for target.
+picotoolBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 picotoolBuild
+.PHONY : picotoolBuild
+
+# fast build rule for target.
+picotoolBuild/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picotoolBuild.dir/build.make CMakeFiles/picotoolBuild.dir/build
+.PHONY : picotoolBuild/fast
+
+#=============================================================================
 # Target rules for targets named bs2_default
 
 # Build rule for target.
@@ -1038,6 +1077,30 @@ home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq_hand
 home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o
 .PHONY : home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o
+
+home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.o: home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.o
+.PHONY : home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.o
+
+# target to build an object file
+home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.o
+.PHONY : home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.o
+
+home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.i: home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
+.PHONY : home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.i
+
+# target to preprocess a source file
+home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
+.PHONY : home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
+
+home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.s: home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
+.PHONY : home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.s
+
+# target to generate assembly for a file
+home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
+.PHONY : home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
 
 home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pll/pll.o: home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
 .PHONY : home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pll/pll.o
@@ -1999,6 +2062,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/main.c.s
 .PHONY : main.c.s
 
+ws2812.o: ws2812.c.o
+.PHONY : ws2812.o
+
+# target to build an object file
+ws2812.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/ws2812.c.o
+.PHONY : ws2812.c.o
+
+ws2812.i: ws2812.c.i
+.PHONY : ws2812.i
+
+# target to preprocess a source file
+ws2812.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/ws2812.c.i
+.PHONY : ws2812.c.i
+
+ws2812.s: ws2812.c.s
+.PHONY : ws2812.s
+
+# target to generate assembly for a file
+ws2812.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/ws2812.c.s
+.PHONY : ws2812.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2009,7 +2096,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... bs2_default_bin"
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
+	@echo "... hello_pico_ws2812_pio_h"
 	@echo "... pico_status_led_ws2812_pio_h"
+	@echo "... picotoolBuild"
+	@echo "... picotoolForceReconfigure"
 	@echo "... pioasmBuild"
 	@echo "... bs2_default"
 	@echo "... bs2_default_library"
@@ -2118,6 +2208,9 @@ help:
 	@echo "... home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq.i"
 	@echo "... home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq.s"
 	@echo "... home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.o"
+	@echo "... home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.o"
+	@echo "... home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.i"
+	@echo "... home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/pio.s"
 	@echo "... home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pll/pll.o"
 	@echo "... home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pll/pll.i"
 	@echo "... home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pll/pll.s"
@@ -2238,6 +2331,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... ws2812.o"
+	@echo "... ws2812.i"
+	@echo "... ws2812.s"
 .PHONY : help
 
 
