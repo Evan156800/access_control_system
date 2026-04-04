@@ -1,0 +1,23 @@
+.program ws2812 //定義pio程式名稱
+.side_set 1 //可在指令同時控制GPIO
+
+.define public T1 2
+.define public T2 5
+.define public T3 3
+
+.wrap_target
+
+//side x 設定 GPIO 電位（0=低、1=高）; [N]維持多久=>延遲 N 個 clock cycle
+bitloop:
+    out x, 1       side 0 [T3 - 1] //從 FIFO 取 1 bit
+    jmp !x do_zero side 1 [T1 - 1] //若是0，跳到do_zero;若是1，繼續下面
+do_one:
+    jmp bitloop    side 1 [T2 - 1] //高電位時間長
+do_zero:
+    nop            side 0 [T2 - 1] //高電位時間短
+.wrap
+
+/*取1bit →
+如果是1 → 高電位長
+如果是0 → 高電位短
+最後拉低*/

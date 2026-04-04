@@ -68,9 +68,9 @@ include CMakeFiles/hello_pico_ws2812_pio_h.dir/progress.make
 
 CMakeFiles/hello_pico_ws2812_pio_h: ws2812.pio.h
 
-ws2812.pio.h: /home/pi/access_control_system/pico/hello_pico/ws2812.pio
+ws2812.pio.h: /home/pi/access_control_system/pico/hello_pico/drivers/ws2812/ws2812.pio
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ws2812.pio.h"
-	pioasm-install/pioasm/pioasm -o c-sdk -v 0 /home/pi/access_control_system/pico/hello_pico/ws2812.pio /home/pi/access_control_system/pico/hello_pico/build/ws2812.pio.h
+	pioasm-install/pioasm/pioasm -o c-sdk -v 0 /home/pi/access_control_system/pico/hello_pico/drivers/ws2812/ws2812.pio /home/pi/access_control_system/pico/hello_pico/build/ws2812.pio.h
 
 hello_pico_ws2812_pio_h: CMakeFiles/hello_pico_ws2812_pio_h
 hello_pico_ws2812_pio_h: ws2812.pio.h

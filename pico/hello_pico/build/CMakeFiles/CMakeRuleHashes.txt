@@ -27,4 +27,4 @@ bceddde34a892c8f8a4fa9dbd73be090 picotool/src/picotoolBuild-stamp/picotoolBuild-
 9921943c89659e5c9ca4f0389c78be19 picotool/src/picotoolBuild-stamp/picotoolBuild-patch
 48dab531b76e0fd118f418700915b1de picotool/src/picotoolBuild-stamp/picotoolBuild-test
 d70227e88d8afd62a1dff1dd06467b06 picotool/src/picotoolBuild-stamp/picotoolBuild-update
-3e5cdacf7a960e303feee36f2d7260bc ws2812.pio.h
+e22792a9395aa874d41f28f15598ba8f ws2812.pio.h

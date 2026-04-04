@@ -246,6 +246,54 @@ pico_status_led_ws2812_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pico_status_led_ws2812_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pico_status_led_ws2812_pio_h.dir/build
 .PHONY : pico_status_led_ws2812_pio_h/fast
 
+drivers/sg90/sg90.o: drivers/sg90/sg90.c.o
+.PHONY : drivers/sg90/sg90.o
+
+# target to build an object file
+drivers/sg90/sg90.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/sg90/sg90.c.o
+.PHONY : drivers/sg90/sg90.c.o
+
+drivers/sg90/sg90.i: drivers/sg90/sg90.c.i
+.PHONY : drivers/sg90/sg90.i
+
+# target to preprocess a source file
+drivers/sg90/sg90.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/sg90/sg90.c.i
+.PHONY : drivers/sg90/sg90.c.i
+
+drivers/sg90/sg90.s: drivers/sg90/sg90.c.s
+.PHONY : drivers/sg90/sg90.s
+
+# target to generate assembly for a file
+drivers/sg90/sg90.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/sg90/sg90.c.s
+.PHONY : drivers/sg90/sg90.c.s
+
+drivers/ws2812/ws2812.o: drivers/ws2812/ws2812.c.o
+.PHONY : drivers/ws2812/ws2812.o
+
+# target to build an object file
+drivers/ws2812/ws2812.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/ws2812/ws2812.c.o
+.PHONY : drivers/ws2812/ws2812.c.o
+
+drivers/ws2812/ws2812.i: drivers/ws2812/ws2812.c.i
+.PHONY : drivers/ws2812/ws2812.i
+
+# target to preprocess a source file
+drivers/ws2812/ws2812.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/ws2812/ws2812.c.i
+.PHONY : drivers/ws2812/ws2812.c.i
+
+drivers/ws2812/ws2812.s: drivers/ws2812/ws2812.c.s
+.PHONY : drivers/ws2812/ws2812.s
+
+# target to generate assembly for a file
+drivers/ws2812/ws2812.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/ws2812/ws2812.c.s
+.PHONY : drivers/ws2812/ws2812.c.s
+
 home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.o: home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o
 .PHONY : home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.o
 
@@ -2062,30 +2110,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/main.c.s
 .PHONY : main.c.s
 
-ws2812.o: ws2812.c.o
-.PHONY : ws2812.o
-
-# target to build an object file
-ws2812.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/ws2812.c.o
-.PHONY : ws2812.c.o
-
-ws2812.i: ws2812.c.i
-.PHONY : ws2812.i
-
-# target to preprocess a source file
-ws2812.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/ws2812.c.i
-.PHONY : ws2812.c.i
-
-ws2812.s: ws2812.c.s
-.PHONY : ws2812.s
-
-# target to generate assembly for a file
-ws2812.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/ws2812.c.s
-.PHONY : ws2812.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2104,6 +2128,12 @@ help:
 	@echo "... bs2_default"
 	@echo "... bs2_default_library"
 	@echo "... hello_pico"
+	@echo "... drivers/sg90/sg90.o"
+	@echo "... drivers/sg90/sg90.i"
+	@echo "... drivers/sg90/sg90.s"
+	@echo "... drivers/ws2812/ws2812.o"
+	@echo "... drivers/ws2812/ws2812.i"
+	@echo "... drivers/ws2812/ws2812.s"
 	@echo "... home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.o"
 	@echo "... home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
@@ -2331,9 +2361,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... ws2812.o"
-	@echo "... ws2812.i"
-	@echo "... ws2812.s"
 .PHONY : help
 
 

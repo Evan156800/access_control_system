@@ -1,6 +1,6 @@
-CMakeFiles/hello_pico.dir/ws2812.c.o: \
- /home/pi/access_control_system/pico/hello_pico/ws2812.c \
- /home/pi/access_control_system/pico/hello_pico/ws2812.h \
+CMakeFiles/hello_pico.dir/drivers/ws2812/ws2812.c.o: \
+ /home/pi/access_control_system/pico/hello_pico/drivers/ws2812/ws2812.c \
+ /home/pi/access_control_system/pico/hello_pico/drivers/ws2812/ws2812.h \
  /home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
  /home/pi/access_control_system/pico/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/pi/access_control_system/pico/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
@@ -51,4 +51,17 @@ CMakeFiles/hello_pico.dir/ws2812.c.o: \
  /home/pi/access_control_system/pico/hello_pico/build/ws2812.pio.h \
  /home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
  /home/pi/access_control_system/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
- /home/pi/access_control_system/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h
+ /home/pi/access_control_system/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
+ /usr/include/newlib/stdio.h \
+ /usr/lib/gcc/arm-none-eabi/12.2.1/include/stdarg.h \
+ /usr/include/newlib/sys/reent.h /usr/include/newlib/_ansi.h \
+ /usr/include/newlib/sys/_types.h /usr/include/newlib/machine/_types.h \
+ /usr/include/newlib/sys/lock.h /usr/include/newlib/sys/types.h \
+ /usr/include/newlib/sys/_stdint.h /usr/include/newlib/machine/endian.h \
+ /usr/include/newlib/machine/_endian.h /usr/include/newlib/sys/select.h \
+ /usr/include/newlib/sys/_sigset.h /usr/include/newlib/sys/_timeval.h \
+ /usr/include/newlib/sys/timespec.h /usr/include/newlib/sys/_timespec.h \
+ /usr/include/newlib/sys/_pthreadtypes.h /usr/include/newlib/sys/sched.h \
+ /usr/include/newlib/machine/types.h /usr/include/newlib/sys/stdio.h \
+ /usr/include/newlib/string.h /usr/include/newlib/sys/_locale.h \
+ /usr/include/newlib/strings.h /usr/include/newlib/sys/string.h

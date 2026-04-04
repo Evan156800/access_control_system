@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hello_pico.dir/drivers/sg90/sg90.c.o"
+  "CMakeFiles/hello_pico.dir/drivers/sg90/sg90.c.o.d"
+  "CMakeFiles/hello_pico.dir/drivers/ws2812/ws2812.c.o"
+  "CMakeFiles/hello_pico.dir/drivers/ws2812/ws2812.c.o.d"
   "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o"
   "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o.d"
   "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o"
@@ -154,8 +158,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o.d"
   "CMakeFiles/hello_pico.dir/main.c.o"
   "CMakeFiles/hello_pico.dir/main.c.o.d"
-  "CMakeFiles/hello_pico.dir/ws2812.c.o"
-  "CMakeFiles/hello_pico.dir/ws2812.c.o.d"
   "hello_pico.bin"
   "hello_pico.dis"
   "hello_pico.elf"

@@ -1821,7 +1821,7 @@ CMakeFiles/hello_pico.dir/all: CMakeFiles/picotoolBuild.dir/all
 CMakeFiles/hello_pico.dir/all: pico-sdk/src/rp2040/boot_stage2/CMakeFiles/bs2_default_library.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82 "Built target hello_pico"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83 "Built target hello_pico"
 .PHONY : CMakeFiles/hello_pico.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1847,12 +1847,12 @@ CMakeFiles/hello_pico.dir/clean:
 CMakeFiles/hello_pico_ws2812_pio_h.dir/all: pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/pioasmBuild.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico_ws2812_pio_h.dir/build.make CMakeFiles/hello_pico_ws2812_pio_h.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico_ws2812_pio_h.dir/build.make CMakeFiles/hello_pico_ws2812_pio_h.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles --progress-num=83 "Built target hello_pico_ws2812_pio_h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles --progress-num= "Built target hello_pico_ws2812_pio_h"
 .PHONY : CMakeFiles/hello_pico_ws2812_pio_h.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/hello_pico_ws2812_pio_h.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/access_control_system/pico/hello_pico/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/access_control_system/pico/hello_pico/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hello_pico_ws2812_pio_h.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/access_control_system/pico/hello_pico/build/CMakeFiles 0
 .PHONY : CMakeFiles/hello_pico_ws2812_pio_h.dir/rule
