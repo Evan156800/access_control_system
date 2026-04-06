@@ -246,6 +246,54 @@ pico_status_led_ws2812_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pico_status_led_ws2812_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pico_status_led_ws2812_pio_h.dir/build
 .PHONY : pico_status_led_ws2812_pio_h/fast
 
+drivers/buzzer/buzzer.o: drivers/buzzer/buzzer.c.o
+.PHONY : drivers/buzzer/buzzer.o
+
+# target to build an object file
+drivers/buzzer/buzzer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/buzzer/buzzer.c.o
+.PHONY : drivers/buzzer/buzzer.c.o
+
+drivers/buzzer/buzzer.i: drivers/buzzer/buzzer.c.i
+.PHONY : drivers/buzzer/buzzer.i
+
+# target to preprocess a source file
+drivers/buzzer/buzzer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/buzzer/buzzer.c.i
+.PHONY : drivers/buzzer/buzzer.c.i
+
+drivers/buzzer/buzzer.s: drivers/buzzer/buzzer.c.s
+.PHONY : drivers/buzzer/buzzer.s
+
+# target to generate assembly for a file
+drivers/buzzer/buzzer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/buzzer/buzzer.c.s
+.PHONY : drivers/buzzer/buzzer.c.s
+
+drivers/pir/pir.o: drivers/pir/pir.c.o
+.PHONY : drivers/pir/pir.o
+
+# target to build an object file
+drivers/pir/pir.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/pir/pir.c.o
+.PHONY : drivers/pir/pir.c.o
+
+drivers/pir/pir.i: drivers/pir/pir.c.i
+.PHONY : drivers/pir/pir.i
+
+# target to preprocess a source file
+drivers/pir/pir.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/pir/pir.c.i
+.PHONY : drivers/pir/pir.c.i
+
+drivers/pir/pir.s: drivers/pir/pir.c.s
+.PHONY : drivers/pir/pir.s
+
+# target to generate assembly for a file
+drivers/pir/pir.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_pico.dir/build.make CMakeFiles/hello_pico.dir/drivers/pir/pir.c.s
+.PHONY : drivers/pir/pir.c.s
+
 drivers/sg90/sg90.o: drivers/sg90/sg90.c.o
 .PHONY : drivers/sg90/sg90.o
 
@@ -2128,6 +2176,12 @@ help:
 	@echo "... bs2_default"
 	@echo "... bs2_default_library"
 	@echo "... hello_pico"
+	@echo "... drivers/buzzer/buzzer.o"
+	@echo "... drivers/buzzer/buzzer.i"
+	@echo "... drivers/buzzer/buzzer.s"
+	@echo "... drivers/pir/pir.o"
+	@echo "... drivers/pir/pir.i"
+	@echo "... drivers/pir/pir.s"
 	@echo "... drivers/sg90/sg90.o"
 	@echo "... drivers/sg90/sg90.i"
 	@echo "... drivers/sg90/sg90.s"

@@ -155,6 +155,8 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/pi/access_control_system/pico/hello_pico/drivers/buzzer/buzzer.c" "CMakeFiles/hello_pico.dir/drivers/buzzer/buzzer.c.o" "gcc" "CMakeFiles/hello_pico.dir/drivers/buzzer/buzzer.c.o.d"
+  "/home/pi/access_control_system/pico/hello_pico/drivers/pir/pir.c" "CMakeFiles/hello_pico.dir/drivers/pir/pir.c.o" "gcc" "CMakeFiles/hello_pico.dir/drivers/pir/pir.c.o.d"
   "/home/pi/access_control_system/pico/hello_pico/drivers/sg90/sg90.c" "CMakeFiles/hello_pico.dir/drivers/sg90/sg90.c.o" "gcc" "CMakeFiles/hello_pico.dir/drivers/sg90/sg90.c.o.d"
   "/home/pi/access_control_system/pico/hello_pico/drivers/ws2812/ws2812.c" "CMakeFiles/hello_pico.dir/drivers/ws2812/ws2812.c.o" "gcc" "CMakeFiles/hello_pico.dir/drivers/ws2812/ws2812.c.o.d"
   "/home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o" "gcc" "CMakeFiles/hello_pico.dir/home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o.d"

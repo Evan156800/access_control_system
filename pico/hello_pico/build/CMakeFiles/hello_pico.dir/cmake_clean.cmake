@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hello_pico.dir/drivers/buzzer/buzzer.c.o"
+  "CMakeFiles/hello_pico.dir/drivers/buzzer/buzzer.c.o.d"
+  "CMakeFiles/hello_pico.dir/drivers/pir/pir.c.o"
+  "CMakeFiles/hello_pico.dir/drivers/pir/pir.c.o.d"
   "CMakeFiles/hello_pico.dir/drivers/sg90/sg90.c.o"
   "CMakeFiles/hello_pico.dir/drivers/sg90/sg90.c.o.d"
   "CMakeFiles/hello_pico.dir/drivers/ws2812/ws2812.c.o"

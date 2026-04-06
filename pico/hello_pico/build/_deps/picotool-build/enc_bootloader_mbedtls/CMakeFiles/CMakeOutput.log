@@ -32,13 +32,13 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-XoxXLc
+Change Dir: /home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-MmLuAT
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_38080/fast && gmake[6]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-XoxXLc'
-/usr/bin/gmake  -f CMakeFiles/cmTC_38080.dir/build.make CMakeFiles/cmTC_38080.dir/build
-gmake[7]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-XoxXLc'
-Building C object CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc   -v -o CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e376c/fast && gmake[6]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-MmLuAT'
+/usr/bin/gmake  -f CMakeFiles/cmTC_e376c.dir/build.make CMakeFiles/cmTC_e376c.dir/build
+gmake[7]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-MmLuAT'
+Building C object CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 OFFLOAD_TARGET_NAMES=nvptx-none
@@ -48,8 +48,8 @@ Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 14.2.0 (Debian 14.2.0-19) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_38080.dir/'
- /usr/libexec/gcc/aarch64-linux-gnu/14/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_38080.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -o /tmp/ccwx0Tol.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_e376c.dir/'
+ /usr/libexec/gcc/aarch64-linux-gnu/14/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e376c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -o /tmp/cc1ZNzYj.s
 GNU C17 (Debian 14.2.0-19) version 14.2.0 (aarch64-linux-gnu)
 	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
 
@@ -67,15 +67,15 @@ ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/../../../../aa
  /usr/include
 End of search list.
 Compiler executable checksum: 07cded30d2a9b3cda97e4b164823fd45
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_38080.dir/'
- as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o /tmp/ccwx0Tol.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_e376c.dir/'
+ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o /tmp/cc1ZNzYj.s
 GNU assembler version 2.44 (aarch64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
 COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.'
-Linking C executable cmTC_38080
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38080.dir/link.txt --verbose=1
-/usr/bin/cc  -v CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o -o cmTC_38080 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_e376c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e376c.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o -o cmTC_e376c 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper
@@ -88,11 +88,11 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 14.2.0 (Debian 14.2.0-19) 
 COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_38080' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_38080.'
- /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz8CJ5y.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -o cmTC_38080 /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_38080' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_38080.'
-gmake[7]: Leaving directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-XoxXLc'
-gmake[6]: Leaving directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-XoxXLc'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e376c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_e376c.'
+ /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPpvrYJ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -o cmTC_e376c /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e376c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_e376c.'
+gmake[7]: Leaving directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-MmLuAT'
+gmake[6]: Leaving directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-MmLuAT'
 
 
 
@@ -113,13 +113,13 @@ Parsed C implicit include dir info from above output: rv=done
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-XoxXLc]
+  ignore line: [Change Dir: /home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-MmLuAT]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_38080/fast && gmake[6]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-XoxXLc']
-  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_38080.dir/build.make CMakeFiles/cmTC_38080.dir/build]
-  ignore line: [gmake[7]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-XoxXLc']
-  ignore line: [Building C object CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e376c/fast && gmake[6]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-MmLuAT']
+  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_e376c.dir/build.make CMakeFiles/cmTC_e376c.dir/build]
+  ignore line: [gmake[7]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-MmLuAT']
+  ignore line: [Building C object CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
@@ -129,8 +129,8 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_38080.dir/']
-  ignore line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_38080.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -o /tmp/ccwx0Tol.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_e376c.dir/']
+  ignore line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e376c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -o /tmp/cc1ZNzYj.s]
   ignore line: [GNU C17 (Debian 14.2.0-19) version 14.2.0 (aarch64-linux-gnu)]
   ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
   ignore line: []
@@ -148,15 +148,15 @@ Parsed C implicit link information from above output:
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
   ignore line: [Compiler executable checksum: 07cded30d2a9b3cda97e4b164823fd45]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_38080.dir/']
-  ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o /tmp/ccwx0Tol.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_e376c.dir/']
+  ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o /tmp/cc1ZNzYj.s]
   ignore line: [GNU assembler version 2.44 (aarch64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
   ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.']
-  ignore line: [Linking C executable cmTC_38080]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38080.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o -o cmTC_38080 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_e376c]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e376c.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o -o cmTC_e376c ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper]
@@ -169,13 +169,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
   ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_38080' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_38080.']
-  link line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz8CJ5y.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -o cmTC_38080 /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e376c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_e376c.']
+  link line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPpvrYJ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -o cmTC_e376c /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
     arg [/usr/libexec/gcc/aarch64-linux-gnu/14/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccz8CJ5y.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccPpvrYJ.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -193,7 +193,7 @@ Parsed C implicit link information from above output:
     arg [--fix-cortex-a53-843419] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_38080] ==> ignore
+    arg [cmTC_e376c] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o]
@@ -205,7 +205,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/aarch64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../..]
-    arg [CMakeFiles/cmTC_38080.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_e376c.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -237,13 +237,13 @@ Parsed C implicit link information from above output:
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-u9km7z
+Change Dir: /home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-dcEfvU
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_63a25/fast && gmake[6]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-u9km7z'
-/usr/bin/gmake  -f CMakeFiles/cmTC_63a25.dir/build.make CMakeFiles/cmTC_63a25.dir/build
-gmake[7]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-u9km7z'
-Building CXX object CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++   -v -o CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f660b/fast && gmake[6]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-dcEfvU'
+/usr/bin/gmake  -f CMakeFiles/cmTC_f660b.dir/build.make CMakeFiles/cmTC_f660b.dir/build
+gmake[7]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-dcEfvU'
+Building CXX object CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 OFFLOAD_TARGET_NAMES=nvptx-none
@@ -253,8 +253,8 @@ Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 14.2.0 (Debian 14.2.0-19) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63a25.dir/'
- /usr/libexec/gcc/aarch64-linux-gnu/14/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_63a25.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -o /tmp/ccxr1yUM.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_f660b.dir/'
+ /usr/libexec/gcc/aarch64-linux-gnu/14/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f660b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -o /tmp/ccnjrSfU.s
 GNU C++17 (Debian 14.2.0-19) version 14.2.0 (aarch64-linux-gnu)
 	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
 
@@ -276,15 +276,15 @@ ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/../../../../aa
  /usr/include
 End of search list.
 Compiler executable checksum: b3582c6e46343b7ca116e1e8d6c2f0f8
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63a25.dir/'
- as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccxr1yUM.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_f660b.dir/'
+ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccnjrSfU.s
 GNU assembler version 2.44 (aarch64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
 COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.'
-Linking CXX executable cmTC_63a25
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63a25.dir/link.txt --verbose=1
-/usr/bin/c++  -v CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_63a25 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_f660b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f660b.dir/link.txt --verbose=1
+/usr/bin/c++  -v CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_f660b 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper
@@ -297,11 +297,11 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 14.2.0 (Debian 14.2.0-19) 
 COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_63a25' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_63a25.'
- /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZytJ1k.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -o cmTC_63a25 /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_63a25' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_63a25.'
-gmake[7]: Leaving directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-u9km7z'
-gmake[6]: Leaving directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-u9km7z'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f660b' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_f660b.'
+ /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBhCEoS.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -o cmTC_f660b /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f660b' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_f660b.'
+gmake[7]: Leaving directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-dcEfvU'
+gmake[6]: Leaving directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-dcEfvU'
 
 
 
@@ -328,13 +328,13 @@ Parsed CXX implicit include dir info from above output: rv=done
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-u9km7z]
+  ignore line: [Change Dir: /home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-dcEfvU]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_63a25/fast && gmake[6]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-u9km7z']
-  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_63a25.dir/build.make CMakeFiles/cmTC_63a25.dir/build]
-  ignore line: [gmake[7]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-u9km7z']
-  ignore line: [Building CXX object CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f660b/fast && gmake[6]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-dcEfvU']
+  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_f660b.dir/build.make CMakeFiles/cmTC_f660b.dir/build]
+  ignore line: [gmake[7]: Entering directory '/home/pi/access_control_system/pico/hello_pico/build/_deps/picotool-build/enc_bootloader_mbedtls/CMakeFiles/CMakeScratch/TryCompile-dcEfvU']
+  ignore line: [Building CXX object CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
@@ -344,8 +344,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63a25.dir/']
-  ignore line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_63a25.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -o /tmp/ccxr1yUM.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_f660b.dir/']
+  ignore line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f660b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -o /tmp/ccnjrSfU.s]
   ignore line: [GNU C++17 (Debian 14.2.0-19) version 14.2.0 (aarch64-linux-gnu)]
   ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
   ignore line: []
@@ -367,15 +367,15 @@ Parsed CXX implicit link information from above output:
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
   ignore line: [Compiler executable checksum: b3582c6e46343b7ca116e1e8d6c2f0f8]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63a25.dir/']
-  ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccxr1yUM.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_f660b.dir/']
+  ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccnjrSfU.s]
   ignore line: [GNU assembler version 2.44 (aarch64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
   ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.']
-  ignore line: [Linking CXX executable cmTC_63a25]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63a25.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_63a25 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_f660b]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f660b.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_f660b ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper]
@@ -388,13 +388,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
   ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_63a25' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_63a25.']
-  link line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZytJ1k.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -o cmTC_63a25 /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f660b' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_f660b.']
+  link line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBhCEoS.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -o cmTC_f660b /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
     arg [/usr/libexec/gcc/aarch64-linux-gnu/14/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccZytJ1k.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccBhCEoS.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -412,7 +412,7 @@ Parsed CXX implicit link information from above output:
     arg [--fix-cortex-a53-843419] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_63a25] ==> ignore
+    arg [cmTC_f660b] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o]
@@ -424,7 +424,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/aarch64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../..]
-    arg [CMakeFiles/cmTC_63a25.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_f660b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]

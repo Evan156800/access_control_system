@@ -10,6 +10,8 @@ add_executable(hello_pico
     main.c
     drivers/ws2812/ws2812.c
     drivers/sg90/sg90.c
+    drivers/buzzer/buzzer.c
+    drivers/pir/pir.c
 )
 
 target_link_libraries(hello_pico
