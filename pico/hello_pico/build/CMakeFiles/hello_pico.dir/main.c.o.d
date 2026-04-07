@@ -16,6 +16,8 @@ CMakeFiles/hello_pico.dir/main.c.o: \
  /usr/include/newlib/sys/timespec.h /usr/include/newlib/sys/_timespec.h \
  /usr/include/newlib/sys/_pthreadtypes.h /usr/include/newlib/sys/sched.h \
  /usr/include/newlib/machine/types.h /usr/include/newlib/sys/stdio.h \
+ /usr/include/newlib/string.h /usr/include/newlib/sys/_locale.h \
+ /usr/include/newlib/strings.h /usr/include/newlib/sys/string.h \
  /home/pi/access_control_system/pico/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
  /home/pi/access_control_system/pico/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/pi/access_control_system/pico/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
