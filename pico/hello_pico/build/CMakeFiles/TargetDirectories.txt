@@ -1,7 +1,5 @@
 /home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/hello_pico.dir
 /home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/hello_pico_ws2812_pio_h.dir
-/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/picotoolForceReconfigure.dir
-/home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/picotoolBuild.dir
 /home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/edit_cache.dir
 /home/pi/access_control_system/pico/hello_pico/build/CMakeFiles/rebuild_cache.dir
 /home/pi/access_control_system/pico/hello_pico/build/pico-sdk/CMakeFiles/edit_cache.dir
@@ -161,7 +159,6 @@
 /home/pi/access_control_system/pico/hello_pico/build/pico-sdk/src/rp2_common/pico_async_context/CMakeFiles/rebuild_cache.dir
 /home/pi/access_control_system/pico/hello_pico/build/pico-sdk/src/rp2_common/pico_btstack/CMakeFiles/edit_cache.dir
 /home/pi/access_control_system/pico/hello_pico/build/pico-sdk/src/rp2_common/pico_btstack/CMakeFiles/rebuild_cache.dir
-/home/pi/access_control_system/pico/hello_pico/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/pioasmBuild.dir
 /home/pi/access_control_system/pico/hello_pico/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir
 /home/pi/access_control_system/pico/hello_pico/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/edit_cache.dir
 /home/pi/access_control_system/pico/hello_pico/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/rebuild_cache.dir

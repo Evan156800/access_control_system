@@ -87,8 +87,6 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
-  "/home/pi/access_control_system/pico/hello_pico"
-  "/home/pi/access_control_system/pico/hello_pico/drivers/ws2812"
   "."
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_atomic/include"
   "/home/pi/access_control_system/pico/pico-sdk/lib/tinyusb/src"
@@ -149,8 +147,8 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_mem_ops/include"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2040/boot_stage2/include"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include"
-  "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pwm/include"
   "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/include"
+  "/home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pwm/include"
   )
 
 # The set of dependency files which are needed:

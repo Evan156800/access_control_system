@@ -143,32 +143,6 @@ hello_pico_ws2812_pio_h/fast:
 .PHONY : hello_pico_ws2812_pio_h/fast
 
 #=============================================================================
-# Target rules for targets named picotoolForceReconfigure
-
-# Build rule for target.
-picotoolForceReconfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 picotoolForceReconfigure
-.PHONY : picotoolForceReconfigure
-
-# fast build rule for target.
-picotoolForceReconfigure/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/picotoolForceReconfigure.dir/build.make CMakeFiles/picotoolForceReconfigure.dir/build
-.PHONY : picotoolForceReconfigure/fast
-
-#=============================================================================
-# Target rules for targets named picotoolBuild
-
-# Build rule for target.
-picotoolBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 picotoolBuild
-.PHONY : picotoolBuild
-
-# fast build rule for target.
-picotoolBuild/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/picotoolBuild.dir/build.make CMakeFiles/picotoolBuild.dir/build
-.PHONY : picotoolBuild/fast
-
-#=============================================================================
 # Target rules for targets named bs2_default
 
 # Build rule for target.
@@ -206,19 +180,6 @@ bs2_default_library: cmake_check_build_system
 bs2_default_library/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2040/boot_stage2/CMakeFiles/bs2_default_library.dir/build.make pico-sdk/src/rp2040/boot_stage2/CMakeFiles/bs2_default_library.dir/build
 .PHONY : bs2_default_library/fast
-
-#=============================================================================
-# Target rules for targets named pioasmBuild
-
-# Build rule for target.
-pioasmBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pioasmBuild
-.PHONY : pioasmBuild
-
-# fast build rule for target.
-pioasmBuild/fast:
-	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/pioasmBuild.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/pioasmBuild.dir/build
-.PHONY : pioasmBuild/fast
 
 #=============================================================================
 # Target rules for targets named cyw43_driver_picow_cyw43_bus_pio_spi_pio_h
@@ -2170,9 +2131,6 @@ help:
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
 	@echo "... hello_pico_ws2812_pio_h"
 	@echo "... pico_status_led_ws2812_pio_h"
-	@echo "... picotoolBuild"
-	@echo "... picotoolForceReconfigure"
-	@echo "... pioasmBuild"
 	@echo "... bs2_default"
 	@echo "... bs2_default_library"
 	@echo "... hello_pico"
