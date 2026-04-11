@@ -1,0 +1,1 @@
+savedcmd_/home/pi/access_control_system/rpi4/drivers/pir/pir_driver.mod := printf '%s\n'   pir_driver.o | awk '!x[$$0]++ { print("/home/pi/access_control_system/rpi4/drivers/pir/"$$0) }' > /home/pi/access_control_system/rpi4/drivers/pir/pir_driver.mod

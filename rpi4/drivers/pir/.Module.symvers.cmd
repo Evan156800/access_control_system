@@ -1,0 +1,1 @@
+savedcmd_/home/pi/access_control_system/rpi4/drivers/pir/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/pi/access_control_system/rpi4/drivers/pir/Module.symvers -n -T /home/pi/access_control_system/rpi4/drivers/pir/modules.order -i Module.symvers -e 

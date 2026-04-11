@@ -1,0 +1,34 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    fragment@0 {
+        target-path = "/soc/gpio@7e200000";
+        __overlay__ {
+            pir_pins: pir_pins {
+                brcm,pins = <17>;
+                brcm,function = <0>;
+                brcm,pull = <0>;
+            };
+        };
+    };
+
+    fragment@1 {
+        target-path = "/soc";
+        __overlay__ {
+            pir: pir@17 {
+                compatible = "custom,pir";
+
+		reg=<0x0 0x11 0x0>;	
+
+                pinctrl-names = "default";
+                pinctrl-0 = <&pir_pins>;
+
+                pir-gpios = <&gpio 17 0>;
+
+                interrupt-parent = <&gpio>;
+                interrupts = <17 3>;
+            };
+        };
+    };
+};
