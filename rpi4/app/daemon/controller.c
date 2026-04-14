@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <fcntl.h>
+#include <termios.h>
+#include <errno.h>
 
 // ===== UART =====
 #define UART_DEV "/dev/serial0"
@@ -20,46 +22,91 @@ typedef enum {
     STATE_FAIL
 } state_t;
 
-// ===== 時間工具 =====
+// ===== 時間 =====
 long get_time_ms() {
     struct timeval tv;
     gettimeofday(&tv, NULL);
     return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 }
 
-// ===== 讀 PIR =====
+// ===== PIR =====
 int read_pir() {
+    int fd = open("/dev/pir", O_RDONLY);
+    if (fd < 0) {
+        perror("open pir failed");
+        return 0;
+    }
+
+    char buf[8] = {0};
+    read(fd, buf, sizeof(buf));
+    close(fd);
+
+    return atoi(buf);
+
+    /*
     FILE *fp = fopen(PIR_PATH, "r");
     if (!fp) return 0;
-
     char buf[8];
     fgets(buf, sizeof(buf), fp);
     fclose(fp);
-
     return atoi(buf);
+    */
 }
 
-// ===== UART send =====
+// ===== UART INIT =====
+int uart_init() {
+    int fd = open(UART_DEV, O_RDWR | O_NOCTTY | O_NDELAY);
+    if (fd < 0) {
+        perror("UART open failed");
+        return -1;
+    }
+
+    struct termios options;
+    tcgetattr(fd, &options);
+
+    cfsetispeed(&options, B115200);
+    cfsetospeed(&options, B115200);
+
+    options.c_cflag |= (CLOCAL | CREAD);
+    options.c_cflag &= ~PARENB;
+    options.c_cflag &= ~CSTOPB;
+    options.c_cflag &= ~CSIZE;
+    options.c_cflag |= CS8;
+
+    options.c_lflag = 0;
+    options.c_iflag = 0;
+    options.c_oflag = 0;
+
+    tcsetattr(fd, TCSANOW, &options);
+
+    return fd;
+}
+
+// ===== UART SEND =====
 void uart_send(int fd, const char *msg) {
     write(fd, msg, strlen(msg));
     write(fd, "\n", 1);
     printf("UART SEND: %s\n", msg);
 }
 
-// ===== Fake UART receive（模擬辨識結果）=====
-int fake_uart_receive(char *buffer) {
-    static long start = 0;
-    static int waiting = 0;
+// ===== UART RECEIVE（非阻塞）=====
+int uart_receive(int fd, char *buffer) {
+    static int idx = 0;
+    char c;
 
-    if (!waiting) {
-        start = get_time_ms();
-        waiting = 1;
-    }
+    int n = read(fd, &c, 1);
+    if (n > 0) {
+        if (c == '\r') return 0;
 
-    if (get_time_ms() - start > 2000) {
-        sprintf(buffer, "{\"event\":\"result\",\"value\":\"pass\"}");
-        waiting = 0;
-        return 1;
+        if (c == '\n') {
+            buffer[idx] = '\0';
+            idx = 0;
+            return 1;
+        }
+
+        if (idx < 127) {
+            buffer[idx++] = c;
+        }
     }
 
     return 0;
@@ -72,28 +119,25 @@ void handle_idle() {
 
 void handle_detect(int uart_fd) {
     printf("STATE: DETECT\n");
-    uart_send(uart_fd, "DETECT");
+    uart_send(uart_fd, "detect");
 }
 
 void handle_pass(int uart_fd) {
     printf("STATE: PASS\n");
-    uart_send(uart_fd, "PASS");
+    uart_send(uart_fd, "pass");
 }
 
 void handle_fail(int uart_fd) {
     printf("STATE: FAIL\n");
-    uart_send(uart_fd, "FAIL");
+    uart_send(uart_fd, "fail");
 }
 
-// ===== 主程式 =====
+// ===== MAIN =====
 int main() {
     printf("System Start (RPI4)\n");
 
-    int uart_fd = open(UART_DEV, O_RDWR | O_NOCTTY);
-    if (uart_fd < 0) {
-        perror("UART open failed");
-        return -1;
-    }
+    int uart_fd = uart_init();
+    if (uart_fd < 0) return -1;
 
     state_t state = STATE_IDLE;
     state_t last_state = -1;
@@ -104,7 +148,6 @@ int main() {
     char uart_buffer[128];
 
     while (1) {
-
         int pir_value = read_pir();
 
         // ===== 狀態變化 =====
@@ -137,12 +180,13 @@ int main() {
             }
         }
 
-        // ===== State Machine =====
+        // ===== STATE MACHINE =====
         switch (state) {
-
             case STATE_IDLE:
+                //state = STATE_WAIT_UART;
                 if (pir_value == 1 && last_pir == 0) {
                     state = STATE_DETECT;
+                    printf("pir detected\n");
                 }
                 break;
 
@@ -153,8 +197,7 @@ int main() {
                 break;
 
             case STATE_WAIT_UART:
-                if (fake_uart_receive(uart_buffer)) {
-
+                if (uart_receive(uart_fd, uart_buffer)) {
                     printf("UART RECV: %s\n", uart_buffer);
 
                     if (strstr(uart_buffer, "pass")) {
@@ -179,7 +222,7 @@ int main() {
         }
 
         last_pir = pir_value;
-        usleep(50000);
+        usleep(20000);
     }
 
     close(uart_fd);

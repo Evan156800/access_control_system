@@ -74,5 +74,4 @@ CMakeFiles/hello_pico.dir/main.c.o: \
  /home/pi/access_control_system/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
  /home/pi/access_control_system/pico/hello_pico/drivers/ws2812/ws2812.h \
  /home/pi/access_control_system/pico/hello_pico/drivers/sg90/sg90.h \
- /home/pi/access_control_system/pico/hello_pico/drivers/buzzer/buzzer.h \
- /home/pi/access_control_system/pico/hello_pico/drivers/pir/pir.h
+ /home/pi/access_control_system/pico/hello_pico/drivers/buzzer/buzzer.h
