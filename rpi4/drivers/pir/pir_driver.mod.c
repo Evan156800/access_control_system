@@ -47,4 +47,4 @@ MODULE_INFO(depends, "");
 MODULE_ALIAS("of:N*T*Ccustom,pir");
 MODULE_ALIAS("of:N*T*Ccustom,pirC*");
 
-MODULE_INFO(srcversion, "F9D1453962282DC69B7CC8C");
+MODULE_INFO(srcversion, "B928FDCE8FF17D870850760");

@@ -57,17 +57,20 @@ static ssize_t pir_read(struct file *file, char __user *buf,
     struct pir_dev *pir = file->private_data;
     char kbuf[16];
     int len;
+    int val;
 
     if (*ppos > 0)
         return 0;
 
-    len = snprintf(kbuf, sizeof(kbuf), "%d\n", pir->motion_detected);
+    /* 🔥 關鍵修正：直接讀 GPIO（不要依賴 IRQ cache） */
+    val = gpiod_get_value(pir->gpiod);
+
+    len = snprintf(kbuf, sizeof(kbuf), "%d\n", val);
 
     if (copy_to_user(buf, kbuf, len))
         return -EFAULT;
 
     *ppos = len;
-
     return len;
 }
 
@@ -96,6 +99,8 @@ static int pir_probe(struct platform_device *pdev)
         return PTR_ERR(pir->gpiod);
     }
 
+    pir->motion_detected = 0;
+
     /* IRQ */
     pir->irq = gpiod_to_irq(pir->gpiod);
     if (pir->irq < 0) {
@@ -103,16 +108,18 @@ static int pir_probe(struct platform_device *pdev)
         return pir->irq;
     }
 
-    ret = devm_request_irq(&pdev->dev, pir->irq,
+    ret = devm_request_irq(&pdev->dev,
+                           pir->irq,
                            pir_irq_handler,
-                           IRQF_TRIGGER_RISING,// | IRQF_TRIGGER_FALLING,
-                           "pir_irq", pir);
+                           IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                           "pir_irq",
+                           pir);
     if (ret) {
         dev_err(&pdev->dev, "Failed to request IRQ\n");
         return ret;
     }
 
-    /* Char Device allocation */
+    /* Char Device */
     ret = alloc_chrdev_region(&pir->devt, 0, 1, DEVICE_NAME);
     if (ret < 0) {
         dev_err(&pdev->dev, "alloc_chrdev_region failed\n");
@@ -138,7 +145,7 @@ static int pir_probe(struct platform_device *pdev)
         goto del_cdev;
     }
 
-    /* device create -> /dev/pir */
+    /* device create */
     if (!device_create(pir_class, NULL, pir->devt, NULL, DEVICE_NAME)) {
         dev_err(&pdev->dev, "device_create failed\n");
         ret = -ENOMEM;
@@ -147,7 +154,7 @@ static int pir_probe(struct platform_device *pdev)
 
     platform_set_drvdata(pdev, pir);
 
-    printk(KERN_INFO "PIR char device initialized (/dev/%s)\n", DEVICE_NAME);
+    printk(KERN_INFO "PIR ready (/dev/%s)\n", DEVICE_NAME);
 
     return 0;
 
@@ -195,4 +202,4 @@ module_platform_driver(pir_driver);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Hans");
-MODULE_DESCRIPTION("PIR Sensor Char Device Driver");
+MODULE_DESCRIPTION("PIR Sensor Char Device Driver (fixed)");

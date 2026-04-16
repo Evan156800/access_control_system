@@ -6,18 +6,19 @@
 #include <fcntl.h>
 #include <termios.h>
 #include <errno.h>
+#include "camera/camera.h"
 
 // ===== UART =====
 #define UART_DEV "/dev/serial0"
 
 // ===== PIR sysfs =====
-#define PIR_PATH "/sys/bus/platform/devices/pir@17/pir"
+//#define PIR_PATH "/sys/bus/platform/devices/pir@17/pir"
 
 // ===== 狀態 =====
 typedef enum {
     STATE_IDLE,
     STATE_DETECT,
-    STATE_WAIT_UART,
+    STATE_RUN_AI,
     STATE_PASS,
     STATE_FAIL
 } state_t;
@@ -38,19 +39,14 @@ int read_pir() {
     }
 
     char buf[8] = {0};
-    read(fd, buf, sizeof(buf));
+    //read(fd, buf, sizeof(buf));
+    int n = read(fd, buf, sizeof(buf) - 1);
     close(fd);
-
+    //printf("[PIR RAW] n=%d buf='%s'\n",n,buf);
+    if(n<=0){
+	return 0;
+    }
     return atoi(buf);
-
-    /*
-    FILE *fp = fopen(PIR_PATH, "r");
-    if (!fp) return 0;
-    char buf[8];
-    fgets(buf, sizeof(buf), fp);
-    fclose(fp);
-    return atoi(buf);
-    */
 }
 
 // ===== UART INIT =====
@@ -122,6 +118,10 @@ void handle_detect(int uart_fd) {
     uart_send(uart_fd, "detect");
 }
 
+void handle_wait_uart(){
+    printf("STATE: WAIT_UART\n");
+}
+
 void handle_pass(int uart_fd) {
     printf("STATE: PASS\n");
     uart_send(uart_fd, "pass");
@@ -131,6 +131,30 @@ void handle_fail(int uart_fd) {
     printf("STATE: FAIL\n");
     uart_send(uart_fd, "fail");
 }
+
+static int running = 0;
+
+void camera_start()
+{
+    if (running) return;
+
+    printf("Camera ON\n");
+    //system("DISPLAY=:0 ffplay -f v4l2 /dev/video0 &");
+
+    running = 1;
+}
+
+void camera_stop()
+{
+    if (!running) return;
+
+    printf("Camera OFF\n");
+    //system("pkill ffplay");
+
+    running = 0;
+}
+
+long last_motion_time = 0;
 
 // ===== MAIN =====
 int main() {
@@ -149,6 +173,11 @@ int main() {
 
     while (1) {
         int pir_value = read_pir();
+	
+	// ===== 更新最後有人時間 =====
+	if (pir_value == 1) {
+            last_motion_time = get_time_ms();
+    	}
 
         // ===== 狀態變化 =====
         if (state != last_state) {
@@ -164,10 +193,6 @@ int main() {
                     state_time = get_time_ms();
                     break;
 
-                case STATE_WAIT_UART:
-                    printf("STATE: WAIT_UART\n");
-                    break;
-
                 case STATE_PASS:
                     handle_pass(uart_fd);
                     state_time = get_time_ms();
@@ -179,11 +204,25 @@ int main() {
                     break;
             }
         }
+	
+	// ===== CAMERA 控制（唯一入口🔥）=====
+    	if (state == STATE_IDLE) {
+            camera_stop();
+    	} else {
+            camera_start();
+    	}
+
+    	// ===== 10秒沒人 → 回 IDLE =====
+    	if (state != STATE_IDLE &&
+            get_time_ms() - last_motion_time > 10000) {
+
+            printf("No motion 10s -> back to IDLE\n");
+            state = STATE_IDLE;
+    	}
 
         // ===== STATE MACHINE =====
         switch (state) {
-            case STATE_IDLE:
-                //state = STATE_WAIT_UART;
+            case STATE_IDLE:		             
                 if (pir_value == 1 && last_pir == 0) {
                     state = STATE_DETECT;
                     printf("pir detected\n");
@@ -191,22 +230,43 @@ int main() {
                 break;
 
             case STATE_DETECT:
-                if (get_time_ms() - state_time > 1000) {
-                    state = STATE_WAIT_UART;
-                }
-                break;
+    		printf("STATE: DETECT\n");
+    		if(get_time_ms() - state_time > 500) {
+        	    state = STATE_RUN_AI;
+    	    	}
+            	break;
 
-            case STATE_WAIT_UART:
-                if (uart_receive(uart_fd, uart_buffer)) {
-                    printf("UART RECV: %s\n", uart_buffer);
+	    case STATE_RUN_AI:
+	    {
+    		printf("STATE: RUN_AI\n");
 
-                    if (strstr(uart_buffer, "pass")) {
-                        state = STATE_PASS;
-                    } else {
-                        state = STATE_FAIL;
-                    }
-                }
-                break;
+    		FILE *fp = popen(
+        	"/home/pi/access_control_system/rpi4/venv/bin/python "
+        	"/home/pi/access_control_system/rpi4/ai/face_lbph/face_auth.py",		   "r");
+
+    		if (fp == NULL) {
+        	    printf("AI CALL FAIL\n");
+        	    state = STATE_FAIL;
+        	    break;
+    		}
+
+    		char result[32] = {0};
+    		fgets(result, sizeof(result), fp);
+    		pclose(fp);
+
+    		result[strcspn(result, "\n")] = 0;
+
+    		printf("FACE RESULT: %s\n", result);
+
+    		if (strcmp(result, "PASS") == 0) {
+        	    state = STATE_PASS;
+    		} else {
+        	    state = STATE_FAIL;
+    		}
+
+    		state_time = get_time_ms();
+	    }
+	    break;
 
             case STATE_PASS:
                 if (get_time_ms() - state_time > 3000) {
