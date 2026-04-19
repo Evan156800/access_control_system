@@ -8,11 +8,7 @@
 #include <errno.h>
 #include "camera/camera.h"
 
-// ===== UART =====
 #define UART_DEV "/dev/serial0"
-
-// ===== PIR sysfs =====
-//#define PIR_PATH "/sys/bus/platform/devices/pir@17/pir"
 
 // ===== 狀態 =====
 typedef enum {
@@ -39,7 +35,6 @@ int read_pir() {
     }
 
     char buf[8] = {0};
-    //read(fd, buf, sizeof(buf));
     int n = read(fd, buf, sizeof(buf) - 1);
     close(fd);
     //printf("[PIR RAW] n=%d buf='%s'\n",n,buf);
@@ -86,7 +81,7 @@ void uart_send(int fd, const char *msg) {
 }
 
 // ===== UART RECEIVE（非阻塞）=====
-int uart_receive(int fd, char *buffer) {
+/*int uart_receive(int fd, char *buffer) {
     static int idx = 0;
     char c;
 
@@ -106,7 +101,7 @@ int uart_receive(int fd, char *buffer) {
     }
 
     return 0;
-}
+}*/
 
 // ===== 動作 =====
 void handle_idle() {
@@ -118,10 +113,6 @@ void handle_detect(int uart_fd) {
     uart_send(uart_fd, "detect");
 }
 
-void handle_wait_uart(){
-    printf("STATE: WAIT_UART\n");
-}
-
 void handle_pass(int uart_fd) {
     printf("STATE: PASS\n");
     uart_send(uart_fd, "pass");
@@ -130,28 +121,6 @@ void handle_pass(int uart_fd) {
 void handle_fail(int uart_fd) {
     printf("STATE: FAIL\n");
     uart_send(uart_fd, "fail");
-}
-
-static int running = 0;
-
-void camera_start()
-{
-    if (running) return;
-
-    printf("Camera ON\n");
-    //system("DISPLAY=:0 ffplay -f v4l2 /dev/video0 &");
-
-    running = 1;
-}
-
-void camera_stop()
-{
-    if (!running) return;
-
-    printf("Camera OFF\n");
-    //system("pkill ffplay");
-
-    running = 0;
 }
 
 long last_motion_time = 0;
@@ -169,7 +138,7 @@ int main() {
     int last_pir = 0;
     long state_time = 0;
 
-    char uart_buffer[128];
+    //char uart_buffer[128];
 
     while (1) {
         int pir_value = read_pir();
@@ -204,13 +173,6 @@ int main() {
                     break;
             }
         }
-	
-	// ===== CAMERA 控制（唯一入口🔥）=====
-    	if (state == STATE_IDLE) {
-            camera_stop();
-    	} else {
-            camera_start();
-    	}
 
     	// ===== 10秒沒人 → 回 IDLE =====
     	if (state != STATE_IDLE &&
@@ -230,12 +192,11 @@ int main() {
                 break;
 
             case STATE_DETECT:
-    		printf("STATE: DETECT\n");
-    		if(get_time_ms() - state_time > 500) {
+    		if(get_time_ms() - state_time > 5) {
         	    state = STATE_RUN_AI;
     	    	}
             	break;
-
+		
 	    case STATE_RUN_AI:
 	    {
     		printf("STATE: RUN_AI\n");
@@ -269,15 +230,15 @@ int main() {
 	    break;
 
             case STATE_PASS:
-                if (get_time_ms() - state_time > 3000) {
+                /*if (get_time_ms() - state_time > 3000) {
                     state = STATE_IDLE;
-                }
+                }*/
                 break;
 
             case STATE_FAIL:
-                if (get_time_ms() - state_time > 2000) {
+                /*if (get_time_ms() - state_time > 2000) {
                     state = STATE_IDLE;
-                }
+                }*/
                 break;
         }
 
