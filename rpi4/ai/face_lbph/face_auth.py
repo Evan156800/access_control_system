@@ -38,7 +38,7 @@ print(result)
 print(confidence)
 
 # 👉 顯示結果再停 2 秒（可調整）
-cv2.waitKey(2000)
+cv2.waitKey(1000)
 
 cam.release()
 cv2.destroyAllWindows()

@@ -44,6 +44,16 @@ int read_pir() {
     return atoi(buf);
 }
 
+void screen_on() {
+    system("wlr-randr --output HDMI-A-1 --on");
+    printf("SCREEN ON\n");
+}
+
+void screen_off() {
+    system("wlr-randr --output HDMI-A-1 --off");
+    printf("SCREEN OFF\n");
+}
+
 // ===== UART INIT =====
 int uart_init() {
     int fd = open(UART_DEV, O_RDWR | O_NOCTTY | O_NDELAY);
@@ -151,6 +161,13 @@ int main() {
         // ===== 狀態變化 =====
         if (state != last_state) {
             last_state = state;
+	    
+	    // 👉 螢幕控制
+    	    if (state == STATE_IDLE) {
+        	screen_off();
+    	    } else {
+        	screen_on();
+    	    }
 
             switch (state) {
                 case STATE_IDLE:
@@ -192,9 +209,7 @@ int main() {
                 break;
 
             case STATE_DETECT:
-    		if(get_time_ms() - state_time > 5) {
         	    state = STATE_RUN_AI;
-    	    	}
             	break;
 		
 	    case STATE_RUN_AI:
