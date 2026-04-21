@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access Control</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 標題 -->
+    <h1 class="title">門 禁 系 統</h1>
+
+    <!-- 狀態 -->
+    <div id="status" class="status waiting">
+        ⏳ WAITING
+    </div>
+
+    <!-- Camera -->
+    <div class="camera-box">
+        <img id="cam">
+        <div id="overlay" class="overlay">Scanning...</div>
+    </div>
+
+</div>
+
+<script src="/static/js/main.js"></script>
+
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access Control</title>
+</head>
+<body>
+
+<h1>門禁系統</h1>
+
+<h2 id="status">等待中...</h2>
+
+<h2>Camera</h2>
+<img id="cam" width="640" style="display:none;">
+
+<script>
+
+setInterval(() => {
+    fetch("/result")
+    .then(r => r.json())
+    .then(data => {
+        let s = document.getElementById("status")
+
+        if (data.result === "PASS") {
+            s.innerText = "✅ PASS"
+            s.style.color = "green"
+        } else if (data.result === "FAIL") {
+            s.innerText = "❌ FAIL"
+            s.style.color = "red"
+        } else {
+            s.innerText = "WAITING"
+	    s.style.color = "gray"
+        }
+    })
+}, 1000)
+
+
+setInterval(() => {
+    fetch("/camera_status")
+    .then(r => r.json())
+    .then(data => {
+        let cam = document.getElementById("cam")
+
+        if (data.status === "ON") {
+	    if(!cam.src.includes("video_feed")){
+            	cam.src = "/video_feed"
+        }
+	cam.style.display = "block"
+	}
+	else {
+            cam.style.display = "none"
+            cam.src = ""
+        }
+    })
+}, 500)
+
+</script>
+
+</body>
+</html>
+-->

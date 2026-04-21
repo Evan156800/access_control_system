@@ -10,23 +10,27 @@
 
 #define UART_DEV "/dev/serial0"
 
-// ===== 狀態 =====
+// ================= PATH =================
+#define RESULT_FILE "/home/pi/access_control_system/rpi4/app/web/result.txt"
+
+// ================= STATE =================
 typedef enum {
     STATE_IDLE,
     STATE_DETECT,
     STATE_RUN_AI,
     STATE_PASS,
-    STATE_FAIL
+    STATE_FAIL,
+    STATE_COOLDOWN
 } state_t;
 
-// ===== 時間 =====
+// ================= TIME =================
 long get_time_ms() {
     struct timeval tv;
     gettimeofday(&tv, NULL);
     return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 }
 
-// ===== PIR =====
+// ================= PIR =================
 int read_pir() {
     int fd = open("/dev/pir", O_RDONLY);
     if (fd < 0) {
@@ -37,13 +41,12 @@ int read_pir() {
     char buf[8] = {0};
     int n = read(fd, buf, sizeof(buf) - 1);
     close(fd);
-    //printf("[PIR RAW] n=%d buf='%s'\n",n,buf);
-    if(n<=0){
-	return 0;
-    }
+
+    if (n <= 0) return 0;
     return atoi(buf);
 }
 
+// ================= SCREEN =================
 void screen_on() {
     system("wlr-randr --output HDMI-A-1 --on");
     printf("SCREEN ON\n");
@@ -54,7 +57,7 @@ void screen_off() {
     printf("SCREEN OFF\n");
 }
 
-// ===== UART INIT =====
+// ================= UART =================
 int uart_init() {
     int fd = open(UART_DEV, O_RDWR | O_NOCTTY | O_NDELAY);
     if (fd < 0) {
@@ -83,37 +86,27 @@ int uart_init() {
     return fd;
 }
 
-// ===== UART SEND =====
 void uart_send(int fd, const char *msg) {
     write(fd, msg, strlen(msg));
     write(fd, "\n", 1);
     printf("UART SEND: %s\n", msg);
 }
 
-// ===== UART RECEIVE（非阻塞）=====
-/*int uart_receive(int fd, char *buffer) {
-    static int idx = 0;
-    char c;
-
-    int n = read(fd, &c, 1);
-    if (n > 0) {
-        if (c == '\r') return 0;
-
-        if (c == '\n') {
-            buffer[idx] = '\0';
-            idx = 0;
-            return 1;
-        }
-
-        if (idx < 127) {
-            buffer[idx++] = c;
-        }
+// ================= READ RESULT =================
+void read_face_result(char *out) {
+    FILE *fp = fopen(RESULT_FILE, "r");
+    if (!fp) {
+        strcpy(out, "NONE");
+        return;
     }
 
-    return 0;
-}*/
+    fgets(out, 32, fp);
+    fclose(fp);
 
-// ===== 動作 =====
+    out[strcspn(out, "\n")] = 0;
+}
+
+// ================= ACTION =================
 void handle_idle() {
     printf("STATE: IDLE\n");
 }
@@ -133,9 +126,7 @@ void handle_fail(int uart_fd) {
     uart_send(uart_fd, "fail");
 }
 
-long last_motion_time = 0;
-
-// ===== MAIN =====
+// ================= MAIN =================
 int main() {
     printf("System Start (RPI4)\n");
 
@@ -145,29 +136,41 @@ int main() {
     state_t state = STATE_IDLE;
     state_t last_state = -1;
 
-    int last_pir = 0;
     long state_time = 0;
+    long last_motion_time = 0;
 
-    //char uart_buffer[128];
+    int display_on = 0;
+    int last_pir = 0;
 
     while (1) {
-        int pir_value = read_pir();
-	
-	// ===== 更新最後有人時間 =====
-	if (pir_value == 1) {
-            last_motion_time = get_time_ms();
-    	}
 
-        // ===== 狀態變化 =====
+        int pir_value = read_pir();
+
+        if (pir_value == 1)
+            last_motion_time = get_time_ms();
+
+        // ===== timeout idle =====
+        if (state != STATE_IDLE &&
+            get_time_ms() - last_motion_time > 10000) {
+            state = STATE_IDLE;
+        }
+
+        // ===== screen control =====
+        /*if (state == STATE_IDLE) {
+            if (display_on) {
+                screen_off();
+                display_on = 0;
+            }
+        } else {
+            if (!display_on) {
+                screen_on();
+                display_on = 1;
+            }
+        }*/
+
+        // ===== state change =====
         if (state != last_state) {
             last_state = state;
-	    
-	    // 👉 螢幕控制
-    	    if (state == STATE_IDLE) {
-        	screen_off();
-    	    } else {
-        	screen_on();
-    	    }
 
             switch (state) {
                 case STATE_IDLE:
@@ -188,20 +191,18 @@ int main() {
                     handle_fail(uart_fd);
                     state_time = get_time_ms();
                     break;
+
+                case STATE_COOLDOWN:
+                    printf("STATE: COOLDOWN\n");
+                    state_time = get_time_ms();
+                    break;
             }
         }
 
-    	// ===== 10秒沒人 → 回 IDLE =====
-    	if (state != STATE_IDLE &&
-            get_time_ms() - last_motion_time > 10000) {
-
-            printf("No motion 10s -> back to IDLE\n");
-            state = STATE_IDLE;
-    	}
-
-        // ===== STATE MACHINE =====
+        // ===== FSM =====
         switch (state) {
-            case STATE_IDLE:		             
+
+            case STATE_IDLE:
                 if (pir_value == 1 && last_pir == 0) {
                     state = STATE_DETECT;
                     printf("pir detected\n");
@@ -209,51 +210,41 @@ int main() {
                 break;
 
             case STATE_DETECT:
-        	    state = STATE_RUN_AI;
-            	break;
-		
-	    case STATE_RUN_AI:
-	    {
-    		printf("STATE: RUN_AI\n");
-
-    		FILE *fp = popen(
-        	"/home/pi/access_control_system/rpi4/venv/bin/python "
-        	"/home/pi/access_control_system/rpi4/ai/face_lbph/face_auth.py",		   "r");
-
-    		if (fp == NULL) {
-        	    printf("AI CALL FAIL\n");
-        	    state = STATE_FAIL;
-        	    break;
-    		}
-
-    		char result[32] = {0};
-    		fgets(result, sizeof(result), fp);
-    		pclose(fp);
-
-    		result[strcspn(result, "\n")] = 0;
-
-    		printf("FACE RESULT: %s\n", result);
-
-    		if (strcmp(result, "PASS") == 0) {
-        	    state = STATE_PASS;
-    		} else {
-        	    state = STATE_FAIL;
-    		}
-
-    		state_time = get_time_ms();
-	    }
-	    break;
-
-            case STATE_PASS:
-                /*if (get_time_ms() - state_time > 3000) {
-                    state = STATE_IDLE;
-                }*/
+                if (get_time_ms() - state_time > 1000) {
+                    state = STATE_RUN_AI;
+                }
                 break;
 
+            case STATE_RUN_AI:
+            {
+                printf("STATE: RUN_AI\n");
+
+                system("/home/pi/access_control_system/rpi4/venv/bin/python "
+                       "/home/pi/access_control_system/rpi4/ai/face_lbph/face_auth.py");
+
+                char result[32];
+                read_face_result(result);
+
+                printf("FACE RESULT: %s\n", result);
+
+                if (strcmp(result, "PASS") == 0)
+                    state = STATE_PASS;
+                else
+                    state = STATE_FAIL;
+
+                state_time = get_time_ms();
+            }
+            break;
+
+            case STATE_PASS:
             case STATE_FAIL:
-                /*if (get_time_ms() - state_time > 2000) {
+                if (get_time_ms() - state_time > 2000)
+                    state = STATE_COOLDOWN;
+                break;
+
+            case STATE_COOLDOWN:
+                if (get_time_ms() - state_time > 1000)
                     state = STATE_IDLE;
-                }*/
                 break;
         }
 

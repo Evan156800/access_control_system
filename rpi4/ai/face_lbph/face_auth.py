@@ -1,44 +1,56 @@
 import os
 import cv2
 import time
+import requests
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(BASE_DIR, "model/lbph_model.yml")
+
+MODEL_PATH = os.path.join(BASE_DIR, "model/lbph_model.yml")
+
+WEB_DIR = os.path.join(BASE_DIR, "../../app/web")
+RESULT_PATH = os.path.join(WEB_DIR, "result.txt")
+CAMERA_STATUS_PATH = os.path.join(WEB_DIR, "camera_status.txt")
+FRAME_PATH = os.path.join(WEB_DIR, "frame.jpg")
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read(model_path)
+recognizer.read(MODEL_PATH)
 
-cam = cv2.VideoCapture(0)
+# ================= OPEN CAMERA =================
+with open(CAMERA_STATUS_PATH, "w") as f:
+    f.write("ON")
 
-start_time = time.time()
-frame = None
+# 等 Flask 更新 frame
+time.sleep(3)
 
-# ✅ 這 5 秒是「動態畫面」
-while time.time() - start_time < 5:
-    ret, frame = cam.read()
-    if not ret:
-        cam.release()
-        exit()
+# 強制 request frame
+try:
+    requests.get("http://localhost:5000/get_frame")
+except:
+    pass
 
-    cv2.imshow("camera", frame)
-    cv2.waitKey(1)  # 很重要，不然畫面不會更新
+# ================= READ FRAME =================
+frame = cv2.imread(FRAME_PATH)
 
-# ✅ 5 秒後才做辨識（用最後一張）
-gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-gray = cv2.resize(gray, (200, 200))
+# ================= RESULT =================
+if frame is None:
+    print("NO FRAME")
+    with open(RESULT_PATH, "w") as f:
+        f.write("FAIL")
 
-label, confidence = recognizer.predict(gray)
-
-if confidence < 80:
-    result = "PASS"
 else:
-    result = "FAIL"
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray = cv2.resize(gray, (200, 200))
 
-print(result)
-print(confidence)
+    label, confidence = recognizer.predict(gray)
 
-# 👉 顯示結果再停 2 秒（可調整）
-cv2.waitKey(1000)
+    print("confidence:", confidence)
 
-cam.release()
-cv2.destroyAllWindows()
+    with open(RESULT_PATH, "w") as f:
+        if confidence < 80:
+            f.write("PASS")
+        else:
+            f.write("FAIL")
+
+# ================= CLOSE CAMERA =================
+with open(CAMERA_STATUS_PATH, "w") as f:
+    f.write("OFF")
