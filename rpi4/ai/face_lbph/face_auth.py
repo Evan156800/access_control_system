@@ -15,14 +15,19 @@ FRAME_PATH = os.path.join(WEB_DIR, "frame.jpg")
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read(MODEL_PATH)
 
+# ⭐ 加入人臉偵測
+face_cascade = cv2.CascadeClassifier(
+    cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+)
+
 # ================= OPEN CAMERA =================
 with open(CAMERA_STATUS_PATH, "w") as f:
     f.write("ON")
 
-# 等 Flask 更新 frame
-time.sleep(3)
+# 等 Flask 更新 frame（避免抓到空畫面）
+time.sleep(2)
 
-# 強制 request frame
+# 強制更新一張 frame
 try:
     requests.get("http://localhost:5000/get_frame")
 except:
@@ -32,24 +37,47 @@ except:
 frame = cv2.imread(FRAME_PATH)
 
 # ================= RESULT =================
+result = "FAIL"
+
 if frame is None:
     print("NO FRAME")
-    with open(RESULT_PATH, "w") as f:
-        f.write("FAIL")
 
 else:
+    cv2.imwrite(os.path.join(WEB_DIR, "debug.jpg"), frame)
+
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    gray = cv2.resize(gray, (200, 200))
 
-    label, confidence = recognizer.predict(gray)
+    # ⭐ 找臉
+    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 
-    print("confidence:", confidence)
+    if len(faces) == 0:
+        print("NO FACE DETECTED")
 
-    with open(RESULT_PATH, "w") as f:
-        if confidence < 80:
-            f.write("PASS")
+    else:
+        (x, y, w, h) = faces[0]
+        
+        pad = 20
+        x1 = max(x - pad, 0)
+        y1 = max(y- pad, 0)
+        x2 = min(x + w + pad, gray.shape[1])
+        y2 = min(y + h + pad, gray.shape[0])
+
+        face_img = gray[y1:y2, x1:x2]
+        face_img = cv2.resize(face_img, (200, 200))
+
+        label, confidence = recognizer.predict(face_img)
+
+        print("confidence:", confidence)
+
+        # ⭐ 門檻建議調高（你原本太嚴）
+        if confidence < 120:
+            result = "PASS"
         else:
-            f.write("FAIL")
+            result = "FAIL"
+
+# 存結果
+with open(RESULT_PATH, "w") as f:
+    f.write(result)
 
 # ================= CLOSE CAMERA =================
 with open(CAMERA_STATUS_PATH, "w") as f:

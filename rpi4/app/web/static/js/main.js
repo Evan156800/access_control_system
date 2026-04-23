@@ -11,19 +11,19 @@ setInterval(() => {
         if (data.result === "PASS") {
             statusEl.innerText = "✅ PASS"
             statusEl.className = "status pass"
-
-        } else if (data.result === "FAIL") {
+	    	
+        } 
+	else if (data.result === "FAIL") {
             statusEl.innerText = "❌ FAIL"
             statusEl.className = "status fail"
-
-        } else {
+        } 
+	else {
             statusEl.innerText = "⏳ WAITING"
             statusEl.className = "status waiting"
         }
 
     })
 }, 800)
-
 
 // ===== CAMERA =====
 setInterval(() => {
